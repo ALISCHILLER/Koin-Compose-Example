@@ -58,7 +58,18 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
-    //koin
-    implementation ("io.insert-koin:koin-android:3.4.0")
-    implementation ("io.insert-koin:koin-androidx-compose:3.4.0")
+    // Ktor
+    implementation (dependency.ktor.client.core)
+    implementation (dependency.ktor.client.cio) // برای Android
+    implementation (dependency.ktor.client.content.negotiation)
+    implementation (dependency.ktor.serialization.kotlinx.json)
+    implementation (dependency.ktor.client.logging)
+
+    // Koin
+    implementation (dependency.koin.core)
+    implementation (dependency.koin.android)
+    implementation (dependency.koin.androidx.compose)
+
+    // Kermit برای لاگ‌گیری
+    implementation ("co.touchlab:kermit:1.0.0")
 }

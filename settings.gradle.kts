@@ -12,11 +12,20 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
+
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
     repositories {
         google()
         mavenCentral()
     }
+
+    versionCatalogs {
+        create("dependency") {
+            from(files("gradle/dependency.versions.toml"))
+        }
+    }
+
 }
 
 rootProject.name = "Koin-Compose-Exmple"

@@ -11,8 +11,6 @@ import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
 val appModule = module{
-    single<UserRepository> { UserRepositoryImpl() }
     factoryOf(::UserStateHolder)
     viewModelOf(::HomeViewModel)
-
 }
