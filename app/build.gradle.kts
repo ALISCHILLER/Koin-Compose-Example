@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    kotlin("kapt")
 }
 
 android {
@@ -37,6 +38,10 @@ android {
     buildFeatures {
         compose = true
     }
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -70,6 +75,13 @@ dependencies {
     implementation (dependency.koin.android)
     implementation (dependency.koin.androidx.compose)
 
+    //Room Db
+    implementation(dependency.androidx.room.runtime)
+    // annotationProcessor(dependency.androidx.room.compiler)
+    kapt(dependency.androidx.room.compiler)
+    implementation(dependency.androidx.room.ktx)
+
+    //
     // Kermit برای لاگ‌گیری
     implementation ("co.touchlab:kermit:1.0.0")
 }

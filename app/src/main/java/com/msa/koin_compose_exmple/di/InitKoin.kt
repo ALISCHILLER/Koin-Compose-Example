@@ -13,7 +13,8 @@ fun initKoin(mainApplication: MainApplication){
         modules(
             appModule,
             networkModule,
-            repositoryModule
+            repositoryModule,
+            databaseModule
             )
     }
 }
